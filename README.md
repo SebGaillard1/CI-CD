@@ -1,4 +1,5 @@
 # Projet Node.js - Exemple de CI/CD avec Docker
+# Sébastien GAILLARD - Matteo NOSSRO
 
 Ce projet est une application Node.js simple qui renvoie "Hello World" sur le port HTTP 3000. Cette app a pour but de démontrer l'utilisation de Docker, GitHub Actions pour l'intégration continue (CI) et le déploiement continu (CD) sur Docker Hub.
 
