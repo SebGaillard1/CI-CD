@@ -6,7 +6,9 @@ Ce projet est une application Node.js simple qui renvoie "Hello World" sur le po
 
 Pour construire l'image Docker de cette application, exécutez la commande suivante dans le répertoire racine du projet :
 
-`docker build -t sebgaillard/cicd .`
+```bash
+docker build -t sebgaillard/cicd .
+```
 
 Cette commande construit une image Docker basée sur le `Dockerfile` fourni, taguée comme `sebgaillard/cicd`.
 
@@ -14,11 +16,15 @@ Cette commande construit une image Docker basée sur le `Dockerfile` fourni, tag
 
 Après avoir construit l'image Docker, vous pouvez démarrer l'application localement en exécutant :
 
-`docker run --rm  -p 3000:3000 sebgaillard/cicd`
+```bash
+docker run --rm  -p 3000:3000 sebgaillard/cicd
+```
 
 Pour tester l'application, utilisez :
 
-`curl http://localhost:3000`
+```bash
+curl http://localhost:3000
+```
 
 Vous devriez voir "Hello World" comme réponse.
 
@@ -46,3 +52,11 @@ Le linting du `Dockerfile` est réalisé automatiquement à chaque push et pull 
 ## Destination du CD
 
 L'image Docker est déployée sur Docker Hub à l'adresse suivante : [sebgaillard/cicd](https://hub.docker.com/r/sebgaillard/cicd/)
+
+## Gestion des Branches
+
+Le projet contient trois branches principales :
+
+-   `main` : la branche principale où les fonctionnalités testées et approuvées sont fusionnées.
+-   `dev` : une branche pour le développement et les tests des nouvelles fonctionnalités.
+-   `test-breaking-bug` : cette branche contient une pull request bloquée en raison d'un bug introduit volontairement. Le CI génère une erreur, ce qui empêche la fusion de cette branche avec `main`.
