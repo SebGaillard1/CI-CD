@@ -53,6 +53,14 @@ Le linting du `Dockerfile` est réalisé automatiquement à chaque push et pull 
 
 L'image Docker est déployée sur Docker Hub à l'adresse suivante : [sebgaillard/cicd](https://hub.docker.com/r/sebgaillard/cicd/)
 
+## Mode Read-Only
+
+Notre application peut être exécutée dans un conteneur Docker en mode "read-only". Voici comment la démarrer en mode Read-Only :
+
+```bash
+docker run --name mon-app-node --read-only -p 3000:3000 sebgaillard/cicd
+```
+
 ## Gestion des Branches
 
 Le projet contient trois branches principales :
