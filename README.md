@@ -61,6 +61,14 @@ Notre application peut être exécutée dans un conteneur Docker en mode "read-o
 docker run --name mon-app-node --read-only -p 3000:3000 sebgaillard/cicd
 ```
 
+## Génération Automatique de Notes de Release
+
+Notre projet utilise les capacités de GitHub Actions pour automatiser la génération de notes de release à chaque fois qu'un nouveau tag est créé et poussé sur GitHub.
+
+# Comment ça Fonctionne ?
+Lorsque vous créez un nouveau tag dans votre dépôt local et le poussez sur GitHub, notre workflow CI/CD défini dans `.github/workflows/tag-release.yml` est déclenché.
+Ce workflow inclut une étape spécifique pour créer une release GitHub, utilisant les informations du tag pour générer une nouvelle note de release.
+
 ## Gestion des Branches
 
 Le projet contient trois branches principales :
